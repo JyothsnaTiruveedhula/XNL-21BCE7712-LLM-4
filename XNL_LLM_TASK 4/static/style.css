@@ -1,0 +1,110 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Background image styles */
+body {
+    background: url('{{ url_for("static", filename="images/Background.jpeg") }}'); 
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Chat container */
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chatbox */
+.chat-box {
+    flex: 1;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+}
+
+#chat-box {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Messages */
+.user-msg, .bot-msg {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-msg {
+    background-color: #4CAF50;
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-msg {
+    background-color: #555;
+    color: white;
+    align-self: flex-start;
+}
+
+/* Input area */
+.user-input {
+    display: flex;
+    margin-top: 20px;
+}
+
+#user-query {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#send-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95%;
+    }
+
+    #user-query {
+        font-size: 14px;
+    }
+
+    #send-btn {
+        font-size: 14px;
+    }
+}
